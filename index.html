@@ -1,0 +1,257 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Assurance maladie obligatoire (LAMal) — nouveaux arrivants en Suisse</title>
+<meta name="description" content="Vous vous installez en Suisse ? L'assurance maladie de base (LAMal) est obligatoire dans les 3 mois. Un conseiller vous aide gratuitement à choisir votre caisse.">
+<style>
+  :root{
+    --rouge:#d52b1e; --marine:#0f2a43; --encre:#1c2733; --gris:#5b6a78;
+    --fond:#f6f8fa; --carte:#ffffff; --bord:#dde4ea; --ok:#1c7c43;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+       color:var(--encre);background:var(--fond);line-height:1.55}
+  a{color:var(--marine)}
+  .bandeau{background:var(--marine);color:#fff;padding:10px 20px;display:flex;
+           align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px}
+  .bandeau .logo{font-weight:700;font-size:17px;letter-spacing:.2px}
+  .bandeau .logo .croix{display:inline-block;background:var(--rouge);color:#fff;border-radius:4px;
+           width:22px;height:22px;text-align:center;line-height:22px;font-weight:800;margin-right:8px}
+  .bandeau .note{font-size:13px;opacity:.85}
+  .heros{max-width:1080px;margin:0 auto;padding:40px 20px 24px;display:grid;
+         grid-template-columns:1.1fr .9fr;gap:36px;align-items:start}
+  @media(max-width:860px){.heros{grid-template-columns:1fr;padding-top:28px}}
+  h1{font-size:clamp(26px,4vw,38px);line-height:1.18;color:var(--marine);margin-bottom:14px}
+  h1 em{font-style:normal;color:var(--rouge)}
+  .sous{font-size:17px;color:var(--gris);margin-bottom:22px}
+  .points{list-style:none;display:grid;gap:12px;margin-bottom:24px}
+  .points li{background:var(--carte);border:1px solid var(--bord);border-radius:10px;
+             padding:12px 14px;display:flex;gap:10px;align-items:flex-start;font-size:15px}
+  .points .p{color:var(--rouge);font-weight:800;flex:none}
+  .confiance{font-size:13px;color:var(--gris)}
+  .carte-form{background:var(--carte);border:1px solid var(--bord);border-radius:14px;
+              padding:24px;box-shadow:0 10px 30px rgba(15,42,67,.08)}
+  .carte-form h2{font-size:19px;color:var(--marine);margin-bottom:4px}
+  .carte-form .st{font-size:13.5px;color:var(--gris);margin-bottom:16px}
+  label{display:block;font-size:13px;font-weight:600;color:var(--marine);margin:12px 0 4px}
+  label .opt{font-weight:400;color:var(--gris)}
+  input[type=text],input[type=email],input[type=tel],input[type=date],select{
+    width:100%;padding:10px 12px;border:1px solid var(--bord);border-radius:8px;
+    font-size:15px;background:#fff;color:var(--encre)}
+  input:focus,select:focus{outline:2px solid var(--marine);outline-offset:0;border-color:var(--marine)}
+  .deux{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+  @media(max-width:480px){.deux{grid-template-columns:1fr}}
+  .genres{display:flex;gap:14px;flex-wrap:wrap;padding-top:2px}
+  .genres label{display:flex;align-items:center;gap:6px;font-weight:500;margin:0;font-size:14.5px}
+  .consent{display:flex;gap:9px;align-items:flex-start;margin:16px 0 6px;font-size:12.5px;color:var(--gris)}
+  .consent input{margin-top:3px;flex:none}
+  button{width:100%;margin-top:14px;background:var(--rouge);color:#fff;border:0;border-radius:9px;
+         padding:14px;font-size:16.5px;font-weight:700;cursor:pointer}
+  button:hover{background:#b92418}
+  button:disabled{opacity:.6;cursor:wait}
+  .erreur{display:none;background:#fdeceb;border:1px solid #f2b7b2;color:#8c1d13;
+          border-radius:8px;padding:10px 12px;font-size:13.5px;margin-top:12px}
+  .succes{display:none;text-align:center;padding:28px 8px}
+  .succes .coche{width:52px;height:52px;border-radius:50%;background:var(--ok);color:#fff;
+          font-size:28px;line-height:52px;margin:0 auto 14px}
+  .succes h3{color:var(--marine);font-size:19px;margin-bottom:8px}
+  .succes p{font-size:14.5px;color:var(--gris)}
+  .hp{position:absolute;left:-6000px;top:-6000px}
+  .section{max-width:1080px;margin:0 auto;padding:8px 20px 36px}
+  .cartes3{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+  @media(max-width:860px){.cartes3{grid-template-columns:1fr}}
+  .c3{background:var(--carte);border:1px solid var(--bord);border-radius:12px;padding:18px}
+  .c3 h3{font-size:15.5px;color:var(--marine);margin-bottom:6px}
+  .c3 p{font-size:14px;color:var(--gris)}
+  footer{background:var(--marine);color:#c8d4de;font-size:12.5px;padding:22px 20px;text-align:center}
+  footer p{max-width:820px;margin:0 auto 6px}
+</style>
+</head>
+<body>
+
+<div class="bandeau">
+  <div class="logo"><span class="croix">+</span>assurance-lamal.com</div>
+  <div class="note">Conseil gratuit et sans engagement — nouveaux arrivants en Suisse</div>
+</div>
+
+<main class="heros">
+  <section>
+    <h1>Vous arrivez en Suisse ?<br>L'assurance maladie de base est <em>obligatoire sous 3 mois</em>.</h1>
+    <p class="sous">Toute personne qui s'installe en Suisse doit s'affilier à une caisse
+    d'assurance maladie de base (LAMal) dans les 3 mois suivant son arrivée — et les primes
+    sont dues rétroactivement depuis le jour d'arrivée. Un conseiller spécialisé vous aide
+    gratuitement à choisir la bonne caisse pour votre canton et votre situation.</p>
+    <ul class="points">
+      <li><span class="p">✓</span><span><strong>Délai légal de 3 mois</strong> — on s'occupe de votre affiliation avant l'échéance, sans stress.</span></li>
+      <li><span class="p">✓</span><span><strong>Des centaines de francs d'écart par an</strong> — les primes varient fortement d'une caisse à l'autre pour les mêmes prestations de base.</span></li>
+      <li><span class="p">✓</span><span><strong>Premier conseil d'installation offert</strong> — franchise, modèle de médecin de famille, complémentaires : tout est expliqué simplement.</span></li>
+    </ul>
+    <p class="confiance">🇨🇭 Service de conseil indépendant. Vos données ne sont transmises
+    qu'au conseiller qui vous rappelle, conformément à la loi suisse sur la protection des données (LPD).</p>
+  </section>
+
+  <section class="carte-form">
+    <div id="zone-form">
+      <h2>Être rappelé par un conseiller</h2>
+      <p class="st">Réponse sous 24&nbsp;h ouvrées. Gratuit et sans engagement.</p>
+      <form id="f" novalidate>
+        <div class="deux">
+          <div>
+            <label for="prenom">Prénom</label>
+            <input type="text" id="prenom" name="prenom" autocomplete="given-name" required>
+          </div>
+          <div>
+            <label for="nom">Nom</label>
+            <input type="text" id="nom" name="nom" autocomplete="family-name" required>
+          </div>
+        </div>
+        <label>Genre</label>
+        <div class="genres">
+          <label><input type="radio" name="genre" value="Madame" required> Madame</label>
+          <label><input type="radio" name="genre" value="Monsieur"> Monsieur</label>
+          <label><input type="radio" name="genre" value="Autre"> Autre</label>
+        </div>
+        <div class="deux">
+          <div>
+            <label for="date_naissance">Date de naissance</label>
+            <input type="date" id="date_naissance" name="date_naissance" autocomplete="bday" required>
+          </div>
+          <div>
+            <label for="date_arrivee">Date d'arrivée en Suisse <span class="opt">(ou prévue)</span></label>
+            <input type="date" id="date_arrivee" name="date_arrivee">
+          </div>
+        </div>
+        <label for="email">Adresse e-mail</label>
+        <input type="email" id="email" name="email" autocomplete="email" required>
+        <label for="telephone">Téléphone</label>
+        <input type="tel" id="telephone" name="telephone" autocomplete="tel" placeholder="+41 79 000 00 00" required>
+        <div class="deux">
+          <div>
+            <label for="npa">Code postal (NPA)</label>
+            <input type="text" id="npa" name="npa" inputmode="numeric" maxlength="4" placeholder="1200" autocomplete="postal-code" required>
+          </div>
+          <div>
+            <label for="canton">Canton d'installation</label>
+            <select id="canton" name="canton" required>
+              <option value="" selected disabled>Choisir…</option>
+              <option value="AR">Appenzell Rhodes-Extérieures (AR)</option>
+              <option value="AI">Appenzell Rhodes-Intérieures (AI)</option>
+              <option value="AG">Argovie (AG)</option>
+              <option value="BE">Berne (BE)</option>
+              <option value="BL">Bâle-Campagne (BL)</option>
+              <option value="BS">Bâle-Ville (BS)</option>
+              <option value="FR">Fribourg (FR)</option>
+              <option value="GE">Genève (GE)</option>
+              <option value="GL">Glaris (GL)</option>
+              <option value="GR">Grisons (GR)</option>
+              <option value="JU">Jura (JU)</option>
+              <option value="LU">Lucerne (LU)</option>
+              <option value="NE">Neuchâtel (NE)</option>
+              <option value="NW">Nidwald (NW)</option>
+              <option value="OW">Obwald (OW)</option>
+              <option value="SG">Saint-Gall (SG)</option>
+              <option value="SH">Schaffhouse (SH)</option>
+              <option value="SZ">Schwytz (SZ)</option>
+              <option value="SO">Soleure (SO)</option>
+              <option value="TI">Tessin (TI)</option>
+              <option value="TG">Thurgovie (TG)</option>
+              <option value="UR">Uri (UR)</option>
+              <option value="VS">Valais (VS)</option>
+              <option value="VD">Vaud (VD)</option>
+              <option value="ZG">Zoug (ZG)</option>
+              <option value="ZH">Zurich (ZH)</option>
+            </select>
+          </div>
+        </div>
+        <div class="hp" aria-hidden="true">
+          <label for="site_web">Ne pas remplir</label>
+          <input type="text" id="site_web" name="site_web" tabindex="-1" autocomplete="off">
+        </div>
+        <label class="consent">
+          <input type="checkbox" id="consentement" required>
+          <span>J'accepte d'être contacté(e) par un conseiller en assurance au sujet de ma demande.
+          Mes données ne sont utilisées que pour ce rappel (LPD).</span>
+        </label>
+        <button type="submit" id="btn">Recevoir mon conseil gratuit</button>
+        <div class="erreur" id="err"></div>
+      </form>
+    </div>
+    <div class="succes" id="zone-succes">
+      <div class="coche">✓</div>
+      <h3>Demande bien reçue !</h3>
+      <p>Un conseiller vous contacte sous 24&nbsp;h ouvrées pour votre affiliation LAMal
+      et vos premières démarches d'installation. Bienvenue en Suisse&nbsp;!</p>
+    </div>
+  </section>
+</main>
+
+<section class="section">
+  <div class="cartes3">
+    <div class="c3"><h3>Pourquoi est-ce obligatoire ?</h3>
+      <p>La loi fédérale sur l'assurance-maladie (LAMal) impose à toute personne domiciliée en Suisse
+      de s'assurer pour les soins de base. Sans affiliation dans les 3 mois, le canton peut vous
+      affilier d'office — souvent à une caisse plus chère.</p></div>
+    <div class="c3"><h3>Que comprend l'assurance de base ?</h3>
+      <p>Médecin, hôpital (division commune de votre canton), médicaments remboursés, maternité,
+      urgences. Les prestations de base sont identiques dans toutes les caisses — seule la prime change.</p></div>
+    <div class="c3"><h3>Combien ça coûte ?</h3>
+      <p>La prime dépend de votre canton, de votre âge, de votre franchise et de la caisse choisie.
+      Le conseiller compare pour vous et vous propose la solution la plus avantageuse pour votre situation.</p></div>
+  </div>
+</section>
+
+<footer>
+  <p><strong>assurance-lamal.com</strong> — service de conseil indépendant destiné aux personnes
+  s'installant en Suisse. Ce site n'est affilié ni à l'administration fédérale ni à une caisse d'assurance.</p>
+  <p>Vos données (identité et coordonnées) sont transmises uniquement au conseiller chargé de vous
+  rappeler et ne sont ni revendues ni utilisées à d'autres fins — loi fédérale sur la protection des données (LPD).</p>
+</footer>
+
+<script>
+const F = document.getElementById('f');
+const BTN = document.getElementById('btn');
+const ERR = document.getElementById('err');
+F.addEventListener('submit', async (e) => {
+  e.preventDefault();
+  ERR.style.display = 'none';
+  if (!F.reportValidity()) return;
+  BTN.disabled = true; BTN.textContent = 'Envoi en cours…';
+  const d = {
+    prenom: F.prenom.value.trim(),
+    nom: F.nom.value.trim(),
+    genre: (F.querySelector('input[name=genre]:checked') || {}).value || '',
+    date_naissance: F.date_naissance.value,
+    date_arrivee: F.date_arrivee.value,
+    email: F.email.value.trim(),
+    telephone: F.telephone.value.trim(),
+    npa: F.npa.value.trim(),
+    canton: F.canton.value,
+    site_web: F.site_web.value,
+    consentement: document.getElementById('consentement').checked
+  };
+  try {
+    const r = await fetch('https://alexandre-79537--assurance-lamal-web.modal.run/lead', {
+      method: 'POST',
+      headers: {'Content-Type': 'application/json'},
+      body: JSON.stringify(d)
+    });
+    const j = await r.json().catch(() => ({}));
+    if (r.ok && j.ok) {
+      document.getElementById('zone-form').style.display = 'none';
+      document.getElementById('zone-succes').style.display = 'block';
+    } else {
+      ERR.textContent = j.detail || "Une erreur est survenue. Merci de vérifier vos informations et de réessayer.";
+      ERR.style.display = 'block';
+      BTN.disabled = false; BTN.textContent = 'Recevoir mon conseil gratuit';
+    }
+  } catch (_) {
+    ERR.textContent = "Connexion impossible. Merci de réessayer dans un instant.";
+    ERR.style.display = 'block';
+    BTN.disabled = false; BTN.textContent = 'Recevoir mon conseil gratuit';
+  }
+});
+</script>
+</body>
+</html>
